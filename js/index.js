@@ -17,7 +17,7 @@
   })
 
   // String的变异方法
-  const stringMethods = ['reg_match', 'reg_replace']
+  const stringMethods = ['reg_match', 'reg_replace', 're_split']
   stringMethods.forEach((method) => {
     String.prototype[method] = function (...args) {
       const _method = method.split('_')[1]
@@ -130,4 +130,9 @@
   '2017-06-12'.reg_replace(_.re26, '$2/$3/$1')
 
   _.re27 = /^(\d{15}|\d{17}[\dxX])$/
+
+  _.re28 = /\D/
+  '2017/06/26'.re_split(_.re28)
+
+  console.log(Object.prototype.toString.call(123))
 })()
